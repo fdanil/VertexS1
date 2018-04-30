@@ -1,0 +1,459 @@
+/*===================================================*/
+/*=============== Connection Fonts ===============*/
+/*===================================================*/
+@font-face {
+	font-family: HelveticaNeue-bold;
+	src: url(../fonts/HelveticaNeue-Bold.ttf);
+}
+
+@font-face {
+	font-family: HelveticaNeue;
+	src: url(../fonts/HelveticaNeue.ttf);
+}
+
+@font-face {
+	font-family: HelveticaNeue-light;
+	src: url(../fonts/HelveticaNeue-Light.ttf);
+}
+
+@font-face {
+	font-family: HelveticaNeue-LightItalic;
+	src: url(../fonts/HelveticaNeue-LightItalic.ttf);
+}
+
+@font-face {
+	font-family: Lato-Regular;
+	src: url(../fonts/Lato/LatoRegular/Lato-Regular.ttf);
+}
+
+@font-face {
+	font-family: LatoBoldItalic;
+	src: url(../fonts/Lato/LatoBoldItalic/LatoBoldItalic.ttf);
+}
+/*===============================================*/
+/*================= Base Styles =================*/
+/*===============================================*/
+html {
+	font-size: 10px;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+}
+li {	
+    list-style-type: none;
+}
+
+body {
+	min-width: 1000px;
+}
+/*===============================================*/
+/*навигация сайта*/
+.header-wrp {
+	position: relative;
+	height: 65px;
+}
+
+header {
+	position: fixed;
+	height: 65px;
+	width: 100%;
+	background-color: rgba(1, 1, 0, .9); /*Прозрачный именно фон!*/
+	z-index: 999;
+}
+
+.container {
+	margin-right: 10%;
+	margin-left: 10%;
+}
+
+.logo {
+	margin-top: 20px;
+}
+
+.header-nav {
+	display: inline-block;
+	float: right;
+}
+
+.header-nav li {
+	display: inline-block;
+	float: right;
+	margin: 0 5rem;
+	line-height: 65px;
+	font-family: 'HelveticaNeue', sans-serif;
+	font-size: 1.4rem;
+	text-transform: uppercase;
+}
+
+.header-nav a {
+	color: #FFFFFF;
+	font-family: HelveticaNeue, sans-serif;
+}
+
+.header-nav a:hover {
+	color: #ca0500;
+}
+
+.menu_gamburger {
+	display: none;
+}
+
+#menu_check {
+	display: none;
+}
+
+.fa-times-circle {
+	display: none;
+}
+
+
+/*===============================================*/
+/*===============================================*/
+@media all and (max-width : 1215px) {
+
+	.header-nav {
+		display: none;
+	}
+
+	.menu_gamburger {
+		display: inline-block;
+		position: absolute;
+		right: 2rem;
+		margin: 0 5rem;
+		line-height: 65px;
+		font-size: 2.4rem;
+		color: white;
+		text-align: right;
+
+	}
+
+	#menu_check:checked ~ .menu_gamburger .fa-align-right {
+		display: none;
+	}	
+
+	#menu_check:checked ~ .menu_gamburger .fa-times-circle {
+		display: inline-block;
+	}
+
+	#menu_check:checked ~ .header-nav {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		position: absolute;
+		top: 65px;
+		left: 0;
+		margin: 0px;
+		height: 100vh;
+		width: 100%;
+		background-color: black;
+		opacity: .9;
+		text-align: center;
+	}
+
+	#menu_check:checked ~ .header-nav li {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		font-family: 'HelveticaNeue', sans-serif;
+		font-size: 2em;
+		text-transform: uppercase;
+	}
+}
+/*===============================================*/
+/*===============================================*/
+/*Банер (главная страница)*/
+.banner {
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
+.banner-img {
+	height: 100vh;
+	width: 100%;
+}
+
+.banner-img img {
+	width: 100%;
+}
+/*Эффект затемнения фона*/
+.smoke {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #000000;
+	opacity: .6;
+	height: 100%;
+	width: 100%;
+}
+
+.banner-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+.banner-content h4 {
+	text-transform: uppercase;
+	font-family: 'HelveticaNeue-bold', sans-serif;
+	font-size: 60px;
+	white-space: nowrap;
+	color: #FFF;
+}
+
+.banner-content h2 {
+	font-family: 'HelveticaNeue-light', sans-serif;
+	font-size: 21px;
+	white-space: nowrap;
+	color: #FFF;
+}
+
+.banner-content a {
+	display: inline-block;
+	position: relative;
+}
+
+.btn-red {
+	padding: 10px 15px;
+	text-align: center;
+	background-color: #ca0500;
+	color: #FFFFFF;
+	font-family: 'HelveticaNeue', sans-serif;
+	font-size: 14px;
+	text-transform: uppercase;
+	border: 1px solid #ca0500;
+}
+
+.btn-red:hover {
+	background-color: #8d0300;
+}
+
+/*===============================================*/
+/*Основа сайта*/
+.osnova_background {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#1471da, endColorstr=#1C85FB)"; /* IE 8-9 */
+	background: -webkit-linear-gradient(97deg, #ffffff 50%, #212121 50%); /* Safari 5.1, iOS 5.0-6.1, Chrome 10-25, Android 4.0-4.3 */
+	background: -moz-linear-gradient(97deg, #ffffff 50%, #212121 50%); /* Firefox 3.6-15 */
+	background: -o-linear-gradient(97deg, #ffffff 50%, #212121 50%); /* Opera 11.1-12 */
+	background: linear-gradient(97deg, #ffffff 50%, #212121 50%); /* Opera 15+, Chrome 25+, IE 10+, Firefox 16+, Safari 6.1+, iOS 7+, Android 4.4+ */
+}
+
+.osnova_flex {
+	display: inline-flex;
+	justify-content: space-between;
+}
+
+.osnova_left {
+	margin: 3px 8% 63px 10%;
+
+}
+
+.osnova_right {
+	margin: 3px 10% 63px 8%;
+	color: white;
+}
+/*===============================================*/
+/*Footer*/
+footer {
+	position: relative;
+	height: 177px;
+	width: 100%;
+	background-color: #111111;
+}
+
+.container-bottom {
+	margin-right: 10%;
+	margin-left: 10%;
+	padding-top: 26px;
+}
+
+.container-bottom li {
+	display: inline-block;
+	float: left;
+	width: 25%;
+}
+
+.container-bottom p {
+	text-transform: uppercase;
+	font-family: 'HelveticaNeue', sans-serif;
+	font-size: 13px;
+	white-space: nowrap;
+	color: #FFF;
+}
+
+.container-bottom hr {
+	width: 198px;
+	margin: 13px 0 13px 0;
+	border-color: #999999;
+}
+
+.container-bottom a {
+	display: block;
+	margin-bottom: 13px;
+}
+
+.container-bottom a:hover {
+	color: white;
+}
+
+.li-social a {
+	display: inline-block;
+	height: 44px;
+	width: 44px;
+	margin-right: 13px;
+	margin-bottom: 33px;
+	border-radius: 50%;
+	background-color: #000000;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 14px;
+	color: #ffffff;
+}
+
+
+.li-social a:hover {
+	background-color: white;
+	color: red;
+}
+
+.container-bottom .copy, .container-bottom a {
+	text-transform: none;
+	font-family: 'HelveticaNeue', sans-serif;
+	font-size: 13px;
+	white-space: nowrap;
+	color: #999999;
+}
+
+.fa-facebook-f, .fa-twitter, .fa-google-plus-g {
+	height: 100%;
+	width: 100%;
+}
+
+/*===============================================*/
+/*Страница About*/
+main {
+	padding-bottom: 64px;
+}
+
+.title {
+	margin-bottom: 27px;
+	margin-top: 59px;
+	font-size: 36px;
+	font-family: 'HelveticaNeue-light', sans-serif;
+	font-weight: normal;
+}
+
+.red-line {
+	height: 2px;
+	width: 36px;
+	margin-bottom: 31px; 
+	border: 0;
+	background-color: #ca0500;
+}
+
+.text-prev {
+	margin-bottom: 26px;
+	font-size: 22px;
+	font-family: 'HelveticaNeue-LightItalic', sans-serif;
+}
+
+.about_osnova_text {
+	margin-bottom: 40px;
+	font-size: 15px;
+	font-family: 'HelveticaNeue-Light', sans-serif;
+	line-height: 1.8em;
+}
+
+main img {
+	width: 100%;
+	height: auto;
+	margin-bottom: 37px;
+}
+
+.qoute {
+	position: relative;
+	margin-bottom: 44px;
+}
+
+.qoute:after {
+	position: absolute;
+	content: '“';
+	left: 50%;
+	transform: translate(-50%);
+	width: 100px;
+	text-align: center;
+	margin-top: -66px;
+	font-size: 60px;
+	font-family: 'Lato-Regular', sans-serif;
+	background-color: #ffffff;
+}
+
+.citata {
+	margin-bottom: 40px;
+	font-size: 18px;
+	font-family: 'LatoBoldItalic', sans-serif;
+	text-align: center;
+}
+
+.hr_bottom_citata {
+	margin-bottom: 40px;
+	height: 1px;
+	border: 0px;
+	background-color: #888888;
+}
+
+/*===============================================*/
+/*Страница Contact*/
+
+.contact_osnova {
+	height: calc(100vh - 243px);
+	width: 100%;
+	letter-spacing : -.36em; /*чтобы убрать пробел между блоками*/
+	font-size : 0; /*чтобы убрать пробел между блоками*/
+}
+
+.contact {
+	display: inline-block;
+	float: left;
+	height: 100%;
+	width: 30%;
+	letter-spacing: normal;
+	padding-left: 10%;
+	font-size: 36px;
+}
+
+.map {
+	display: inline-block;
+	height: 100%;
+	width: 70%;
+	letter-spacing: normal;
+}
+
+.contact .title {
+	font-weight: normal;
+	margin-top: 47px;
+}
+
+.contact p {
+	font-size: 14px;
+	font-family: 'HelveticaNeue-Light', sans-serif;
+	line-height: 1.8em;
+	color: #888888;
+}
+
+.contact p span {
+	text-transform: uppercase;
+	color: #000000;
+}
